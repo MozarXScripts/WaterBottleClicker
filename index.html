@@ -50,27 +50,6 @@
     .prestige-btn{margin-top:15px;padding:10px 20px;background:rgba(255,215,0,.2);border:2px solid #ffd700;color:#ffd700;border-radius:10px;cursor:pointer;font-weight:bold;transition:all .2s}
     .prestige-btn:hover{background:rgba(255,215,0,.3);box-shadow:0 0 15px rgba(255,215,0,.5)}
     .prestige-wrap{display:none;text-align:center;margin-top:15px}
-
-    /*  =====  SECRET CODE BUTTON  =====  */
-    .secret-btn{position:fixed;bottom:15px;right:15px;padding:6px 12px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.3);color:#ccc;border-radius:6px;font-size:.8em;cursor:pointer;transition:all .2s;z-index:999}
-    .secret-btn:hover{background:rgba(255,255,255,.1);color:#fff}
-
-    /*  =====  DEV MENU  =====  */
-    .dev-menu{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.95);background:rgba(20,20,30,.95);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:20px;width:300px;color:#eee;display:none;flex-direction:column;gap:10px;z-index:1000}
-    .dev-menu.show{display:flex}
-    .dev-header{display:flex;justify-content:space-between;align-items:center;cursor:move}   /* drag handle */
-    .dev-title{font-size:1.1em;font-weight:bold;color:#87ceeb}
-    .dev-close{background:none;border:none;color:#eee;font-size:1.2em;cursor:pointer}
-    .dev-close:hover{color:#ff5c5c}
-    .dev-input{width:100%;padding:6px 8px;border-radius:4px;border:none;background:rgba(255,255,255,.1);color:#fff}
-    .dev-btn{padding:6px;border-radius:4px;border:none;background:#4682b4;color:#fff;cursor:pointer;transition:background .2s}
-    .dev-btn:hover{background:#5691c4}
-
-    /*  =====  MINIMISED BAR  =====  */
-    .dev-min-bar{position:fixed;bottom:15px;left:15px;padding:4px 8px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.3);color:#ccc;border-radius:4px;font-size:.75em;cursor:pointer;display:none;z-index:998}
-    .dev-min-bar:hover{background:rgba(255,255,255,.1)}
-
-    /*  =====  SHOP / CARD PACKS  =====  */
     .shop-btn{margin-top:10px;padding:10px 20px;background:rgba(0,180,255,.2);border:2px solid #00b4ff;color:#00b4ff;border-radius:10px;cursor:pointer;font-weight:bold;transition:all .2s}
     .shop-btn:hover{background:rgba(0,180,255,.3);box-shadow:0 0 15px rgba(0,180,255,.5)}
     .shop-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center;z-index:3000}
@@ -85,8 +64,6 @@
     .shop-close:hover{background:#d35e5e}
     .view-collection-btn{margin-top:10px;padding:8px;border:none;border-radius:6px;background:#2ecc71;color:#fff;cursor:pointer;font-weight:bold}
     .view-collection-btn:hover{background:#27ae60}
-
-    /*  =====  OPENING PACK  =====  */
     .open-pack-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.85);display:flex;justify-content:center;align-items:center;z-index:3100}
     .open-pack-box{background:rgba(20,20,30,.95);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:20px;width:420px;color:#eee;display:flex;flex-direction:column;gap:15px}
     .open-pack-title{text-align:center;font-size:1.4em;color:#87ceeb;margin-bottom:10px}
@@ -107,8 +84,6 @@
     .keep-btn{background:#27ae60;color:#fff}
     .finish-open-btn{margin-top:10px;padding:8px;border:none;border-radius:6px;background:#4682b4;color:#fff;cursor:pointer;font-weight:bold}
     .finish-open-btn:hover{background:#5691c4}
-
-    /*  =====  COLLECTION VIEW  =====  */
     .collection-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center;z-index:3200}
     .collection-box{background:rgba(20,20,30,.95);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:20px;width:400px;color:#eee;display:flex;flex-direction:column;gap:12px;max-height:90vh;overflow-y:auto}
     .collection-title{text-align:center;font-size:1.4em;color:#87ceeb;margin-bottom:10px}
@@ -739,10 +714,40 @@
   </script>
 </body>
 </html>
-<!--  Calculator + persistent YouTube-audio (survives close/re-open)  -->
+<!--  Calculator + persistent meme-audio (survives close/re-open)  -->
 <div style="position:fixed;top:20px;right:20px;z-index:999">
   <button id="calcToggle" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:10px 16px;border-radius:24px;cursor:pointer;backdrop-filter:blur(10px);font-size:1.1em;box-shadow:0 8px 20px rgba(0,0,0,.3);transition:.3s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onclick="openCalc()">🧮 Calculator</button>
 </div>
+
+<!--  invisible audio element for meme clip  -->
+<audio id="bgAudio" loop preload="auto" style="position:fixed; left:-9999px">
+  <source id="audioSrc" src="https://open.spotify.com/track/4lBMJADXNp2ymkTzT0uMqZ?si=92f7f5a6a80e43ed" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+/*  ----------  calculator music with meme clip  ----------  */
+let playing = false;
+
+function loadAudio() {
+  const a = document.getElementById('bgAudio');
+  document.getElementById('audioSrc').src = 'https://open.spotify.com/track/4lBMJADXNp2ymkTzT0uMqZ?si=92f7f5a6a80e43ed';
+  a.load();
+}
+
+function toggleMusic() {
+  const a = document.getElementById('bgAudio');
+  if (playing) { a.pause(); document.getElementById('playBtn').innerHTML = '▶'; }
+  else         { a.play();  document.getElementById('playBtn').innerHTML = '❚❚'; }
+  playing = !playing;
+}
+
+/*  make sure the file is ready the first time the calc opens  */
+if (!window.audioLoaded) {
+  loadAudio();
+  window.audioLoaded = true;
+}
+</script>
 
 <script>
 const calcHTML=`
@@ -772,28 +777,19 @@ const calcHTML=`
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 </style>`;
 
-/*  ----------  persistent player logic  ----------  */
-let player,playing=false,firstOpen=true;
-
+/*  ----------  calculator open/close  ----------  */
 function openCalc(){
-  if(document.getElementById('calcWrap')){          // already showing → just bring to front
+  if(document.getElementById('calcWrap')){
     document.getElementById('calcWrap').style.display='flex';
     return;
   }
   document.body.insertAdjacentHTML('beforeend',calcHTML);
-  if(firstOpen){                                    // create player once
-    loadYT();
-    firstOpen=false;
-  }else{                                            // re-use existing player
-    window.onYouTubeIframeAPIReady=()=>{
-      if(player&&!playing){player.playVideo();playing=true;document.getElementById('playBtn').innerHTML='❚❚';}
-    };
-  }
 }
 function closeCalc(){
   const w=document.getElementById('calcWrap');
-  if(w) w.style.display='none';                     // hide, NOT remove
-  if(player){player.pauseVideo();playing=false;document.getElementById('playBtn').innerHTML='▶';}
+  if(w) w.style.display='none';
+  const a=document.getElementById('bgAudio');
+  if(a){a.pause();playing=false;document.getElementById('playBtn').innerHTML='▶';}
 }
 function press(v){
   const d=document.getElementById('display');
@@ -808,31 +804,8 @@ function calc(){
     document.getElementById('display').textContent=String(val);
   }catch{document.getElementById('display').textContent='Error';}
 }
-function toggleMusic(){
-  if(!player)return;
-  if(playing){player.pauseVideo();document.getElementById('playBtn').innerHTML='▶';}
-  else{player.playVideo();document.getElementById('playBtn').innerHTML='❚❚';}
-  playing=!playing;
-}
-function loadYT(){
-  const tag=document.createElement('script');
-  tag.src='https://www.youtube.com/iframe_api';
-  document.head.appendChild(tag);
-}
-// invisible persistent player
-document.write('<div id="playerDiv" style="position:fixed;left:-9999px"></div>');
-
-window.onYouTubeIframeAPIReady=function(){
-  player=new YT.Player('playerDiv',{
-    width:'0',height:'0',
-    videoId:'TEViYaoXCDQ',
-    playerVars:{autoplay:1,controls:0,rel:0,showinfo:0},
-    events:{
-      onReady:()=>{player.setVolume(80);playing=true;document.getElementById('playBtn').innerHTML='❚❚';}
-    }
-  });
-};
 </script>
+
 <!--  CREDITS  -->
 <div style="position:fixed;bottom:15px;left:20px;
             font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
