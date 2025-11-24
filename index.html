@@ -69,6 +69,61 @@
     /*  =====  MINIMISED BAR  =====  */
     .dev-min-bar{position:fixed;bottom:15px;left:15px;padding:4px 8px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.3);color:#ccc;border-radius:4px;font-size:.75em;cursor:pointer;display:none;z-index:998}
     .dev-min-bar:hover{background:rgba(255,255,255,.1)}
+
+    /*  =====  SHOP / CARD PACKS  =====  */
+    .shop-btn{margin-top:10px;padding:10px 20px;background:rgba(0,180,255,.2);border:2px solid #00b4ff;color:#00b4ff;border-radius:10px;cursor:pointer;font-weight:bold;transition:all .2s}
+    .shop-btn:hover{background:rgba(0,180,255,.3);box-shadow:0 0 15px rgba(0,180,255,.5)}
+    .shop-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center;z-index:3000}
+    .shop-box{background:rgba(20,20,30,.95);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:25px;width:340px;color:#eee;display:flex;flex-direction:column;gap:12px;max-height:90vh;overflow-y:auto}
+    .shop-title{font-size:1.5em;text-align:center;color:#87ceeb;margin-bottom:10px}
+    .pack-item{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.1);border-radius:8px;padding:12px;cursor:pointer;transition:background .2s}
+    .pack-item:hover{background:rgba(255,255,255,.2)}
+    .pack-name{font-weight:600}
+    .pack-cost{color:#ffd700}
+    .pack-odds{font-size:.75em;opacity:.8}
+    .shop-close{align-self:flex-end;padding:4px 10px;background:#c44d4d;color:#fff;border:none;border-radius:6px;cursor:pointer}
+    .shop-close:hover{background:#d35e5e}
+    .view-collection-btn{margin-top:10px;padding:8px;border:none;border-radius:6px;background:#2ecc71;color:#fff;cursor:pointer;font-weight:bold}
+    .view-collection-btn:hover{background:#27ae60}
+
+    /*  =====  OPENING PACK  =====  */
+    .open-pack-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.85);display:flex;justify-content:center;align-items:center;z-index:3100}
+    .open-pack-box{background:rgba(20,20,30,.95);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:20px;width:420px;color:#eee;display:flex;flex-direction:column;gap:15px}
+    .open-pack-title{text-align:center;font-size:1.4em;color:#87ceeb;margin-bottom:10px}
+    .cards-reveal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+    .card-item{text-align:center;background:rgba(255,255,255,.1);border-radius:8px;padding:10px;border:2px solid transparent;transition:border .2s}
+    .card-item.godly{border-color:#ffd700;box-shadow:0 0 12px #ffd700}
+    .card-item.legendary{border-color:#ff33a8;box-shadow:0 0 10px #ff33a8}
+    .card-item.epic{border-color:#9b59b6;box-shadow:0 0 8px #9b59b6}
+    .card-item.rare{border-color:#3498db;box-shadow:0 0 6px #3498db}
+    .card-item.common{border-color:#95a5a6;box-shadow:0 0 4px #95a5a6}
+    .card-emoji{font-size:2.2em;margin-bottom:4px}
+    .card-name{font-weight:600;font-size:.9em}
+    .card-rarity{font-size:.75em;opacity:.8;margin:2px 0}
+    .card-value{font-size:.8em;color:#ffd700}
+    .card-actions{display:flex;gap:6px;margin-top:6px}
+    .card-actions button{flex:1;padding:4px 6px;border:none;border-radius:4px;cursor:pointer;font-size:.75em;font-weight:bold}
+    .sell-btn{background:#e74c3c;color:#fff}
+    .keep-btn{background:#27ae60;color:#fff}
+    .finish-open-btn{margin-top:10px;padding:8px;border:none;border-radius:6px;background:#4682b4;color:#fff;cursor:pointer;font-weight:bold}
+    .finish-open-btn:hover{background:#5691c4}
+
+    /*  =====  COLLECTION VIEW  =====  */
+    .collection-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center;z-index:3200}
+    .collection-box{background:rgba(20,20,30,.95);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:20px;width:400px;color:#eee;display:flex;flex-direction:column;gap:12px;max-height:90vh;overflow-y:auto}
+    .collection-title{text-align:center;font-size:1.4em;color:#87ceeb;margin-bottom:10px}
+    .collection-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .collection-card{text-align:center;background:rgba(255,255,255,.1);border-radius:6px;padding:8px;border:2px solid transparent;transition:border .2s}
+    .collection-card.godly{border-color:#ffd700;box-shadow:0 0 10px #ffd700}
+    .collection-card.legendary{border-color:#ff33a8;box-shadow:0 0 8px #ff33a8}
+    .collection-card.epic{border-color:#9b59b6;box-shadow:0 0 6px #9b59b6}
+    .collection-card.rare{border-color:#3498db;box-shadow:0 0 4px #3498db}
+    .collection-card.common{border-color:#95a5a6;box-shadow:0 0 3px #95a5a6}
+    .collection-emoji{font-size:1.8em}
+    .collection-name{font-size:.75em;font-weight:600;margin-top:4px}
+    .collection-sell-btn{margin-top:4px;padding:4px 6px;border:none;border-radius:4px;background:#e74c3c;color:#fff;cursor:pointer;font-size:.7em;font-weight:bold}
+    .collection-close{align-self:flex-end;padding:4px 10px;background:#c44d4d;color:#fff;border:none;border-radius:6px;cursor:pointer}
+    .collection-close:hover{background:#d35e5e}
   </style>
 </head>
 
@@ -111,10 +166,59 @@
 
     <button class="dev-btn" onclick="instantPrestige()">Instant Prestige (+0.1×)</button>
     <button class="dev-btn" onclick="devReset()">Dev Hard Reset</button>
+    <button class="dev-btn" onclick="devGiveCard()">Give Any Card</button>
   </div>
 
   <!--  MINIMISED BAR  -->
   <div class="dev-min-bar" id="devMinBar" onclick="restoreDev()">🛠️ Dev Menu</div>
+
+  <!--  SHOP MODAL  -->
+  <div class="shop-modal" id="shopModal" style="display:none">
+    <div class="shop-box">
+      <div class="shop-title">🎴 Card Shop</div>
+      <button class="shop-close" onclick="closeShop()">Close</button>
+      <div class="pack-item" onclick="buyPack('common')">
+        <div>
+          <div class="pack-name">Common Pack</div>
+          <div class="pack-odds">75% Common | 20% Rare | 5% Epic</div>
+        </div>
+        <div class="pack-cost">250 💧</div>
+      </div>
+      <div class="pack-item" onclick="buyPack('rare')">
+        <div>
+          <div class="pack-name">Rare Pack</div>
+          <div class="pack-odds">60% Rare | 30% Epic | 10% Legendary</div>
+        </div>
+        <div class="pack-cost">1 000 💧</div>
+      </div>
+      <div class="pack-item" onclick="buyPack('legendary')">
+        <div>
+          <div class="pack-name">Legendary Pack</div>
+          <div class="pack-odds">50% Epic | 35% Legendary | 0.00001% GODLY</div>
+        </div>
+        <div class="pack-cost">5 000 💧</div>
+      </div>
+      <button class="view-collection-btn" onclick="openCollection()">📂 View Collection</button>
+    </div>
+  </div>
+
+  <!--  OPENING PACK  -->
+  <div class="open-pack-modal" id="openPackModal" style="display:none">
+    <div class="open-pack-box">
+      <div class="open-pack-title">Opening Pack...</div>
+      <div class="cards-reveal" id="cardsReveal"></div>
+      <button class="finish-open-btn" onclick="finishOpenPack()">Done</button>
+    </div>
+  </div>
+
+  <!--  COLLECTION VIEW  -->
+  <div class="collection-modal" id="collectionModal" style="display:none">
+    <div class="collection-box">
+      <div class="collection-title">Your Collection</div>
+      <button class="collection-close" onclick="closeCollection()">Close</button>
+      <div class="collection-grid" id="collectionGrid"></div>
+    </div>
+  </div>
 
   <div class="game-container">
     <h1>💧 Water Bottle Clicker 💧</h1>
@@ -138,6 +242,7 @@
         <div class="prestige-wrap" id="prestige-wrap">
           <button class="prestige-btn" onclick="prestige()">Prestige (reset for +0.1× multiplier)</button>
         </div>
+        <button class="shop-btn" onclick="openShop()">🎴 Card Shop</button>
       </div>
 
       <div class="upgrades-section">
@@ -160,6 +265,7 @@
         const l=JSON.parse(s);
         gameState={...gameState,...l};
         gameState.upgrades={...gameState.upgrades,...l.upgrades};
+        if(l.collection) gameState.collection=l.collection;
       }
     }
     function saveGame(){
@@ -174,6 +280,7 @@
       autoRate:0,
       multiplier:1,
       totalWaterAllTime:0,
+      collection:[],
       upgrades:{
         betterBottle:      {name:"Better Bottle",description:"+1 per click",cost:50,owned:0,maxLevel:50,effect:()=>{gameState.waterPerClick+=1}},
         autoDropper:       {name:"Auto Dropper",description:"+1/sec auto",cost:200,owned:0,maxLevel:25,effect:()=>{gameState.autoRate+=1}},
@@ -183,6 +290,33 @@
         waterFall:         {name:"Water Fall",description:"+100/sec auto",cost:25000,owned:0,maxLevel:5,effect:()=>{gameState.autoRate+=100}},
         oceanGenerator:    {name:"Ocean Generator",description:"+1000/sec auto",cost:100000,owned:0,maxLevel:3,effect:()=>{gameState.autoRate+=1000}}
       }
+    };
+
+    //  =====  CARD DATA  =====
+    const cardData={
+      common:[
+        {name:"Dropplet",emoji:"💧",value:10},
+        {name:"Ice Cube",emoji:"🧊",value:15},
+        {name:"Water Gun",emoji:"🔫",value:20}
+      ],
+      rare:[
+        {name:"Wave",emoji:"🌊",value:50},
+        {name:"Fountain",emoji:"⛲",value:60},
+        {name:"Waterfall",emoji:"🏞️",value:70}
+      ],
+      epic:[
+        {name:"Storm",emoji:"⛈️",value:150},
+        {name:"Whirlpool",emoji:"🌀",value:200},
+        {name:"Tsunami",emoji:"🌊",value:250}
+      ],
+      legendary:[
+        {name:"Atlantis",emoji:"🏰",value:1000},
+        {name:"Poseidon",emoji:"🧜‍♂️",value:1500},
+        {name:"Leviathan",emoji:"🐉",value:2000}
+      ],
+      godly:[
+        {name:"Captain Calvin the Brave",emoji:"🫅",value:Infinity}
+      ]
     };
 
     //  =====  UTILS  =====
@@ -290,6 +424,7 @@
         autoRate:0,
         multiplier:newMult,
         totalWaterAllTime:0,
+        collection:[],
         upgrades:{
           betterBottle:      {name:"Better Bottle",description:"+1 per click",cost:50,owned:0,maxLevel:50,effect:()=>{gameState.waterPerClick+=1}},
           autoDropper:       {name:"Auto Dropper",description:"+1/sec auto",cost:200,owned:0,maxLevel:25,effect:()=>{gameState.autoRate+=1}},
@@ -307,7 +442,7 @@
 
     //  =====  RESET  =====
     function resetGame(){
-      if(!confirm('Erase ALL progress (including multiplier) and start over?'))return;
+      if(!confirm('Erase ALL progress (including multiplier & cards) and start over?'))return;
       localStorage.removeItem('waterClickerSave');
       location.reload();
     }
@@ -376,6 +511,18 @@
       localStorage.removeItem('waterClickerSave');
       location.reload();
     }
+    function devGiveCard(){
+      const rarities=['common','rare','epic','legendary','godly'];
+      const r=prompt('Enter rarity (common/rare/epic/legendary/godly):')?.toLowerCase();
+      if(!rarities.includes(r))return alert('Invalid rarity');
+      if(r==='godly'){
+        const code=prompt('Enter GODLY code:');
+        if(code!=='0717')return alert('Wrong code');
+      }
+      giveCard(r);
+      alert('Card given!');
+      saveGame();
+    }
 
     //  =====  DEV MENU SHOW / HIDE / MINIMISE  =====
     function toggleDev(show){
@@ -410,52 +557,279 @@
       devMenu.style.transform='none';
     });
     document.addEventListener('mouseup',()=>dragging=false);
+    
+    //  =====  SHOP / CARD FUNCTIONS  =====
+    function openShop(){
+      document.getElementById('shopModal').style.display='flex';
+    }
+    function closeShop(){
+      document.getElementById('shopModal').style.display='none';
+    }
+    function buyPack(type){
+      const prices={common:250,rare:1000,legendary:5000};
+      const price=prices[type];
+      if(gameState.water<price)return alert('Not enough water!');
+      gameState.water-=price;
+      updateDisplay();
+      saveGame();
+      const cards=generatePack(type);
+      showPackOpening(cards);
+    }
+    function generatePack(type){
+      const cards=[];
+      const rng=Math.random;
+      for(let i=0;i<3;i++){
+        let r;
+        if(type==='common'){
+          r=rng()<0.75?'common':rng()<0.95?'rare':'epic';
+        }else if(type==='rare'){
+          r=rng()<0.6?'rare':rng()<0.9?'epic':'legendary';
+        }else{
+          r=rng()<0.5?'epic':rng()<0.85?'legendary':'godly';
+        }
+        const pool=cardData[r];
+        const card=pool[Math.floor(Math.random()*pool.length)];
+        cards.push({...card,rarity:r});
+      }
+      return cards;
+    }
+    function showPackOpening(cards){
+      const reveal=document.getElementById('cardsReveal');
+      reveal.innerHTML='';
+      window.tempPackCards=cards;
+      cards.forEach((card,idx)=>{
+        const div=document.createElement('div');
+        div.className=`card-item ${card.rarity}`;
+        div.innerHTML=`
+          <div class="card-emoji">${card.emoji}</div>
+          <div class="card-name">${card.name}</div>
+          <div class="card-rarity">${card.rarity.toUpperCase()}</div>
+          <div class="card-value">${card.value===Infinity?'∞':formatNumber(card.value)} 💧</div>
+          <div class="card-actions">
+            <button class="sell-btn" onclick="sellCardFromPack(${idx})">Sell</button>
+            <button class="keep-btn" onclick="keepCardFromPack(${idx})">Keep</button>
+          </div>
+        `;
+        reveal.appendChild(div);
+      });
+      document.getElementById('openPackModal').style.display='flex';
+    }
+    function sellCardFromPack(idx){
+      const card=window.tempPackCards[idx];
+      const val=card.value===Infinity?10000:card.value;
+      gameState.water+=val;
+      gameState.totalWaterAllTime+=val;
+      updateDisplay();
+      window.tempPackCards.splice(idx,1);
+      rerenderPack();
+    }
+    function keepCardFromPack(idx){
+      const card=window.tempPackCards[idx];
+      gameState.collection.push(card);
+      window.tempPackCards.splice(idx,1);
+      rerenderPack();
+    }
+    function rerenderPack(){
+      const cards=window.tempPackCards;
+      const reveal=document.getElementById('cardsReveal');
+      reveal.innerHTML='';
+      cards.forEach((card,idx)=>{
+        const div=document.createElement('div');
+        div.className=`card-item ${card.rarity}`;
+        div.innerHTML=`
+          <div class="card-emoji">${card.emoji}</div>
+          <div class="card-name">${card.name}</div>
+          <div class="card-rarity">${card.rarity.toUpperCase()}</div>
+          <div class="card-value">${card.value===Infinity?'∞':formatNumber(card.value)} 💧</div>
+          <div class="card-actions">
+            <button class="sell-btn" onclick="sellCardFromPack(${idx})">Sell</button>
+            <button class="keep-btn" onclick="keepCardFromPack(${idx})">Keep</button>
+          </div>
+        `;
+        reveal.appendChild(div);
+      });
+      if(cards.length===0) finishOpenPack();
+    }
+    function finishOpenPack(){
+      document.getElementById('openPackModal').style.display='none';
+      saveGame();
+    }
+    function openCollection(){
+      renderCollection();
+      document.getElementById('collectionModal').style.display='flex';
+    }
+    function closeCollection(){
+      document.getElementById('collectionModal').style.display='none';
+    }
+    function renderCollection(){
+      const grid=document.getElementById('collectionGrid');
+      grid.innerHTML='';
+      if(gameState.collection.length===0){
+        grid.innerHTML='<div style="grid-column:1/-1;text-align:center;opacity:.7">No cards yet. Buy some packs!</div>';
+        return;
+      }
+      gameState.collection.forEach((card,idx)=>{
+        const div=document.createElement('div');
+        div.className=`collection-card ${card.rarity}`;
+        div.innerHTML=`
+          <div class="collection-emoji">${card.emoji}</div>
+          <div class="collection-name">${card.name}</div>
+          <button class="collection-sell-btn" onclick="sellCardFromCollection(${idx})">Sell ${card.value===Infinity?'∞':formatNumber(card.value)}</button>
+        `;
+        grid.appendChild(div);
+      });
+    }
+    function sellCardFromCollection(idx){
+      const card=gameState.collection[idx];
+      const val=card.value===Infinity?10000:card.value;
+      gameState.water+=val;
+      gameState.totalWaterAllTime+=val;
+      gameState.collection.splice(idx,1);
+      updateDisplay();
+      renderCollection();
+      saveGame();
+    }
+    function giveCard(rarity){
+      const pool=cardData[rarity];
+      const card=pool[Math.floor(Math.random()*pool.length)];
+      gameState.collection.push({...card,rarity});
+    }
 
     //  =====  INIT  =====
     loadGame();
     updateDisplay();
     renderUpgrades();
   </script>
+
+  <!--  satisfying water-drop sound  -->
+  <script>
+    const audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+    function playWater(){
+      const now=audioCtx.currentTime;
+      const drop=audioCtx.createOscillator();
+      const dropG=audioCtx.createGain();
+      drop.type='sine';
+      drop.frequency.setValueAtTime(900,now);
+      drop.frequency.exponentialRampToValueAtTime(350,now+0.1);
+      dropG.gain.setValueAtTime(0.25,now);
+      dropG.gain.exponentialRampToValueAtTime(0.0001,now+0.12);
+      drop.connect(dropG);
+      dropG.connect(audioCtx.destination);
+      drop.start(); drop.stop(now+0.13);
+
+      const noise=audioCtx.createBufferSource();
+      const noiseG=audioCtx.createGain();
+      const filter=audioCtx.createBiquadFilter();
+      const buffer=audioCtx.createBuffer(1, audioCtx.sampleRate*0.08, audioCtx.sampleRate);
+      const data=buffer.getChannelData(0);
+      for(let i=0;i<data.length;i++)data[i]=Math.random()*2-1;
+      noise.buffer=buffer;
+      filter.type='bandpass';
+      filter.frequency.value=1200;
+      filter.Q.value=0.8;
+      noiseG.gain.setValueAtTime(0.08,now);
+      noiseG.gain.exponentialRampToValueAtTime(0.0001,now+0.08);
+      noise.connect(filter); filter.connect(noiseG); noiseG.connect(audioCtx.destination);
+      noise.start(); noise.stop(now+0.08);
+    }
+    document.getElementById('water-bottle').addEventListener('click',()=>{
+      if(audioCtx.state==='suspended')audioCtx.resume();
+      playWater();
+    });
+  </script>
 </body>
 </html>
-<script>
-/*  satisfying water-drop  */
-const audioCtx=new(window.AudioContext||window.webkitAudioContext)();
-function playWater(){
-  const now=audioCtx.currentTime;
-  // drop layer
-  const drop=audioCtx.createOscillator();
-  const dropG=audioCtx.createGain();
-  drop.type='sine';
-  drop.frequency.setValueAtTime(900,now);
-  drop.frequency.exponentialRampToValueAtTime(350,now+0.1);
-  dropG.gain.setValueAtTime(0.25,now);
-  dropG.gain.exponentialRampToValueAtTime(0.0001,now+0.12);
-  drop.connect(dropG);
-  dropG.connect(audioCtx.destination);
-  drop.start(); drop.stop(now+0.13);
+<!--  Calculator + persistent YouTube-audio (survives close/re-open)  -->
+<div style="position:fixed;top:20px;right:20px;z-index:999">
+  <button id="calcToggle" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:10px 16px;border-radius:24px;cursor:pointer;backdrop-filter:blur(10px);font-size:1.1em;box-shadow:0 8px 20px rgba(0,0,0,.3);transition:.3s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onclick="openCalc()">🧮 Calculator</button>
+</div>
 
-  // splash layer (filtered noise)
-  const noise=audioCtx.createBufferSource();
-  const noiseG=audioCtx.createGain();
-  const filter=audioCtx.createBiquadFilter();
-  const buffer=audioCtx.createBuffer(1, audioCtx.sampleRate*0.08, audioCtx.sampleRate);
-  const data=buffer.getChannelData(0);
-  for(let i=0;i<data.length;i++)data[i]=Math.random()*2-1;
-  noise.buffer=buffer;
-  filter.type='bandpass';
-  filter.frequency.value=1200;
-  filter.Q.value=0.8;
-  noiseG.gain.setValueAtTime(0.08,now);
-  noiseG.gain.exponentialRampToValueAtTime(0.0001,now+0.08);
-  noise.connect(filter); filter.connect(noiseG); noiseG.connect(audioCtx.destination);
-  noise.start(); noise.stop(now+0.08);
+<script>
+const calcHTML=`
+<div id="calcWrap" style="position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;display:flex;justify-content:center;align-items:center;animation:fadeIn .3s ease">
+  <div style="background:rgba(30,30,40,.85);border:1px solid rgba(255,255,255,.15);color:#fff;padding:25px;border-radius:20px;width:320px;backdrop-filter:blur(15px);box-shadow:0 20px 40px rgba(0,0,0,.4)">
+    <div id="display" style="text-align:right;margin-bottom:15px;font-size:2.2em;min-height:45px">0</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+      <button class="calcBtn" onclick="press('7')">7</button><button class="calcBtn" onclick="press('8')">8</button><button class="calcBtn" onclick="press('9')">9</button><button class="calcBtn op" onclick="press('/')">÷</button>
+      <button class="calcBtn" onclick="press('4')">4</button><button class="calcBtn" onclick="press('5')">5</button><button class="calcBtn" onclick="press('6')">6</button><button class="calcBtn op" onclick="press('*')">×</button>
+      <button class="calcBtn" onclick="press('1')">1</button><button class="calcBtn" onclick="press('2')">2</button><button class="calcBtn" onclick="press('3')">3</button><button class="calcBtn op" onclick="press('-')">−</button>
+      <button class="calcBtn" onclick="press('0')">0</button><button class="calcBtn" onclick="clr()">C</button><button class="calcBtn eq" onclick="calc()">=</button><button class="calcBtn op" onclick="press('+')">+</button>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;margin-top:15px;gap:10px">
+      <button id="playBtn" onclick="toggleMusic()" style="background:#1e1e2f;border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:50%;width:52px;height:52px;font-size:1.4em;cursor:pointer">▶</button>
+      <div id="eqBars" style="display:flex;gap:3px"><span style="width:4px;height:20px;background:#fff;animation:eq .6s infinite"></span><span style="width:4px;height:20px;background:#fff;animation:eq .6s infinite .1s"></span><span style="width:4px;height:20px;background:#fff;animation:eq .6s infinite .2s"></span></div>
+      <button onclick="closeCalc()" style="background:transparent;border:none;color:#fff;font-size:1.2em;cursor:pointer">✖</button>
+    </div>
+  </div>
+</div>
+<style>
+.calcBtn{width:100%;padding:14px 0;font-size:1.3em;border:none;border-radius:12px;background:rgba(255,255,255,.08);color:#fff;cursor:pointer;transition:.2s}
+.calcBtn:hover{background:rgba(255,255,255,.15)}
+.op{background:rgba(255,180,0,.15);color:#ffd700}
+.eq{background:rgba(0,200,255,.15);color:#00b4ff}
+#eqBars span{transition:.3s;transform-origin:bottom}
+@keyframes eq{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+</style>`;
+
+/*  ----------  persistent player logic  ----------  */
+let player,playing=false,firstOpen=true;
+
+function openCalc(){
+  if(document.getElementById('calcWrap')){          // already showing → just bring to front
+    document.getElementById('calcWrap').style.display='flex';
+    return;
+  }
+  document.body.insertAdjacentHTML('beforeend',calcHTML);
+  if(firstOpen){                                    // create player once
+    loadYT();
+    firstOpen=false;
+  }else{                                            // re-use existing player
+    window.onYouTubeIframeAPIReady=()=>{
+      if(player&&!playing){player.playVideo();playing=true;document.getElementById('playBtn').innerHTML='❚❚';}
+    };
+  }
 }
+function closeCalc(){
+  const w=document.getElementById('calcWrap');
+  if(w) w.style.display='none';                     // hide, NOT remove
+  if(player){player.pauseVideo();playing=false;document.getElementById('playBtn').innerHTML='▶';}
+}
+function press(v){
+  const d=document.getElementById('display');
+  d.textContent=d.textContent==='0'?v:d.textContent+v;
+}
+function clr(){
+  document.getElementById('display').textContent='0';
+}
+function calc(){
+  try{
+    const val=eval(document.getElementById('display').textContent);
+    document.getElementById('display').textContent=String(val);
+  }catch{document.getElementById('display').textContent='Error';}
+}
+function toggleMusic(){
+  if(!player)return;
+  if(playing){player.pauseVideo();document.getElementById('playBtn').innerHTML='▶';}
+  else{player.playVideo();document.getElementById('playBtn').innerHTML='❚❚';}
+  playing=!playing;
+}
+function loadYT(){
+  const tag=document.createElement('script');
+  tag.src='https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+}
+// invisible persistent player
+document.write('<div id="playerDiv" style="position:fixed;left:-9999px"></div>');
 
-/*  hook to bottle  */
-document.getElementById('water-bottle').addEventListener('click',()=>{
-  if(audioCtx.state==='suspended')audioCtx.resume();
-  playWater();
-});
+window.onYouTubeIframeAPIReady=function(){
+  player=new YT.Player('playerDiv',{
+    width:'0',height:'0',
+    videoId:'TEViYaoXCDQ',
+    playerVars:{autoplay:1,controls:0,rel:0,showinfo:0},
+    events:{
+      onReady:()=>{player.setVolume(80);playing=true;document.getElementById('playBtn').innerHTML='❚❚';}
+    }
+  });
+};
 </script>
-<script>
